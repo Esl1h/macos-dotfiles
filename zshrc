@@ -80,17 +80,17 @@ HIST_STAMPS="mm.dd.yyyy"
 plugins=(
 	git
 	bundler
-    dotenv
+	dotenv
 	rbenv
 	rake
 	ansible
 	aws
-    docker-compose
+ 	docker-compose
 	gitfast
 	terraform
 	vscode
 	git-extras
-    docker
+	docker
 	zsh-syntax-highlighting
 	zsh-autosuggestions
 	bgnotify
@@ -115,6 +115,7 @@ alias k='kubectl'
 export KUBECTX_CURRENT_FGCOLOR=$(tput setaf 6) # blue text
 export KUBECTX_CURRENT_BGCOLOR=$(tput setab 7) # white background
 
+export TERM=xterm-256color
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -128,17 +129,6 @@ export KUBECTX_CURRENT_BGCOLOR=$(tput setab 7) # white background
    export EDITOR='mvim'
  fi
 
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
 #
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 

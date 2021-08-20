@@ -64,19 +64,26 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'joshdick/onedark.vim'
 Plug 'itchyny/lightline.vim'
+Plug 'frazrepo/vim-rainbow'
+Plug 'preservim/nerdtree'
+Plug 'chrisbra/vim-zsh'
+Plug 'kovetskiy/vim-bash'
+Plug 'stephpy/vim-yaml'
+Plug 'TaDaa/vimade'
 
 call plug#end()
 
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" 07. Theme                                                                  "
+" 03. Theme                                                                  "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:lightline = {
       \ 'colorscheme' : 'wombat',
       \ }
-
 let g:onedark_style = 'darker'
+let g:rainbow_active = 1
+let g:yaml_limit_spell = 1
 
 colorscheme onedark
 

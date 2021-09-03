@@ -8,36 +8,17 @@ fi
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-# Path to your oh-my-zsh installation.
 export ZSH="/Users/esli.silva/.oh-my-zsh"
 
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="powerlevel10k/powerlevel10k"
 
-# Set list of themes to pick from when loading at random
-# Setting this variable when ZSH_THEME=random will cause zsh to load
-# a theme from this variable instead of looking in $ZSH/themes/
-# If set to an empty array, this variable will have no effect.
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
-# Uncomment the following line to use hyphen-insensitive completion.
-# Case-sensitive completion must be off. _ and - will be interchangeable.
-# HYPHEN_INSENSITIVE="true"
-
-# Uncomment the following line to disable bi-weekly auto-update checks.
-# DISABLE_AUTO_UPDATE="true"
-
-# Uncomment the following line to automatically update without prompting.
-# DISABLE_UPDATE_PROMPT="true"
-
-# Uncomment the following line to change how often to auto-update (in days).
-# export UPDATE_ZSH_DAYS=13
+HYPHEN_INSENSITIVE="true"
+DISABLE_UPDATE_PROMPT="true"
+export UPDATE_ZSH_DAYS=15
 
 # Uncomment the following line if pasting URLs and other text is messed up.
 # DISABLE_MAGIC_FUNCTIONS="true"
@@ -61,14 +42,6 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # much, much faster.
 # DISABLE_UNTRACKED_FILES_DIRTY="true"
 
-# Uncomment the following line if you want to change the command execution time
-# stamp shown in the history command output.
-# You can set one of the optional three formats:
-# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# or set a custom format using the strftime function format specifications,
-# see 'man strftime' for details.
-HIST_STAMPS="mm.dd.yyyy"
-
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
@@ -80,17 +53,17 @@ HIST_STAMPS="mm.dd.yyyy"
 plugins=(
 	git
 	bundler
-	dotenv
+  	dotenv
 	rbenv
 	rake
 	ansible
 	aws
- 	docker-compose
+  	docker-compose
 	gitfast
 	terraform
 	vscode
 	git-extras
-	docker
+  	docker
 	zsh-syntax-highlighting
 	zsh-autosuggestions
 	bgnotify
@@ -102,6 +75,11 @@ plugins=(
 	sublime
 	tmux
 	tmuxinator
+  	chucknorris
+  	fzf
+  	helm
+  	iterm2
+  	osx
 	)
 
 source $ZSH/oh-my-zsh.sh
@@ -111,11 +89,14 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 alias k='kubectl'
+alias history='\history -E'
 
 export KUBECTX_CURRENT_FGCOLOR=$(tput setaf 6) # blue text
 export KUBECTX_CURRENT_BGCOLOR=$(tput setab 7) # white background
 
 export TERM=xterm-256color
+
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -135,3 +116,12 @@ source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 [[ /usr/local/bin/kubectl ]] && source <(kubectl completion zsh)
+
+ssh-add ~/.ssh/bitbucket 2&>1 /dev/null
+
+PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+PATH="$HOME/bin:$PATH"
+
+HISTSIZE=99999
+HISTFILESIZE=999999
+SAVEHIST=$HISTSIZE
